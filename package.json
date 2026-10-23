@@ -1,0 +1,33 @@
+{
+  "name": "repostflow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A personal, demo-first workflow for managing TikTok reposts.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node -e \"require('node:fs').rmSync('.test-dist',{recursive:true,force:true})\" && tsc --strict --outDir .test-dist --module commonjs --moduleResolution node --target ES2022 --esModuleInterop --skipLibCheck --noEmit false tests/backend.test.ts lib/domain.ts lib/manual-workflow.ts lib/csv.ts lib/providers/demo.ts lib/persistence/local-store.ts lib/persistence/index.ts && node .test-dist/tests/backend.test.js"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "^15.5.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
+  }
+}
